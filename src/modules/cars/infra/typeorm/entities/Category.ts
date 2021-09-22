@@ -18,6 +18,7 @@ class Category {
 
   constructor() {
     if(!this.id) {
+      
       this.id = uuidV4();
     }
   }
