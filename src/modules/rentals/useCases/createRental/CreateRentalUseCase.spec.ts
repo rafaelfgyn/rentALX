@@ -1,4 +1,4 @@
-import { DayjsDateProvider } from '../../../../shared/container/providers/DateProvider/Implementations/DayjsDataProvider'
+import { DayjsDateProvider } from '../../../../shared/container/providers/DateProvider/Implementations/DayjsDateProvider'
 import { AppError } from '../../../../shared/errors/AppError';
 import { RentalsRepositoryInMemory } from '../../repositories/in-memory/RentalsRepositoryInMemory';
 import { CreateRentalUseCase } from './CreateRentalUseCase'
