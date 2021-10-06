@@ -4,7 +4,7 @@ import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { sign } from "jsonwebtoken";
 import { AppError } from "../../../../shared/errors/AppError";
-import { IUsersTokensRepository } from '../../repositories/in-memory/IUsersTokensRepository'
+import { IUsersTokensRepository } from '../../repositories/IUsersTokensRepository'
 import auth from "@config/auth";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 

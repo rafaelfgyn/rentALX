@@ -4,17 +4,23 @@ import { AuthenticateUserUseCase } from '../authenticateUser/AuthenticateUserUse
 import { UsersRepositoryInMemory } from '../../repositories/in-memory/UsersRepositoryInMemory'
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { AppError } from '../../../../shared/errors/AppError'
+import { UsersTokensRepositoryInMemory } from "../../repositories/in-memory/UsersTokensRepositoryInMemory"
+import { DayjsDateProvider } from '@shared/container/providers/DateProvider/Implementations/DayjsDateProvider';
 
 let authenticateUserUseCase: AuthenticateUserUseCase;
 let usersRepositoryInMemory: UsersRepositoryInMemory;
+let userTokensRepositoryInMemory: UsersTokensRepositoryInMemory;
 let createUserUseCase: CreateUserUseCase;
+let dateProvider: DayjsDateProvider
 
 describe('Authenticate User', () => {
 
   beforeEach(() => {
 
     usersRepositoryInMemory = new UsersRepositoryInMemory();
-    authenticateUserUseCase = new AuthenticateUserUseCase(usersRepositoryInMemory);
+    userTokensRepositoryInMemory = new UsersTokensRepositoryInMemory()
+    dateProvider = new DayjsDateProvider()
+    authenticateUserUseCase = new AuthenticateUserUseCase(usersRepositoryInMemory, userTokensRepositoryInMemory, dateProvider);
     createUserUseCase = new CreateUserUseCase(usersRepositoryInMemory);
   })
 
@@ -30,8 +36,6 @@ describe('Authenticate User', () => {
     await createUserUseCase.execute(user);
 
     const result = await authenticateUserUseCase.execute({ email: user.email, password: user.password });
-
-    console.log(result)
 
     expect(result).toHaveProperty('token');
   })
