@@ -10,8 +10,14 @@ class EtherealMailProvider implements IMailProvider {
   private client: Transporter
 
   constructor() {
+
+    this.createClient()
+  }
+
+  private async createClient() {
+
     nodemailer.createTestAccount().then(account => {
-      
+
       const transporter = nodemailer.createTransport({
         host: account.smtp.host,
         port: account.smtp.port,
@@ -24,17 +30,19 @@ class EtherealMailProvider implements IMailProvider {
 
       this.client = transporter
     })
-    .catch(err => console.error(err))
+      .catch(err => console.error(err))
   }
 
   async sendMail(to: string, subject: string, variables: any, path: string): Promise<void> {
+
+    if (!this.client) { await this.createClient() }
 
     const templateFileContent = fs.readFileSync(path).toString("utf-8")
 
     const templateParse = handlebars.compile(templateFileContent)
 
     const templateHTML = templateParse(variables)
-    
+
     const message = await this.client.sendMail({
       to,
       from: "Rentx <noreplay@rentx.com.br>",
