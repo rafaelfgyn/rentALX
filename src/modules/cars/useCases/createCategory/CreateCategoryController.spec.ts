@@ -31,7 +31,6 @@ describe('Create Category Controller', () => {
   it('should be able to create a new category', async () => {
 
     const responseToken = await request(app).post('/sessions').send({
-      
       email: 'admin@rentx.com.br',
       password: 'admin'
     })
@@ -39,7 +38,6 @@ describe('Create Category Controller', () => {
     const { refresh_token } = responseToken.body
 
     const response = await request(app).post('/categories').send({
-
       name: "Category Supertest",
       description: "Category Supertest"
     }).set({
@@ -60,7 +58,6 @@ describe('Create Category Controller', () => {
     const { refresh_token } = responseToken.body
 
     const response = await request(app).post('/categories').send({
-
       name: "Category Supertest",
       description: "Category Supertest"
     }).set({

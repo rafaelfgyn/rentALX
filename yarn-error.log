@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\rafae\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add ts-node-dev handlebars
+  C:\Program Files\nodejs\node.exe C:\Users\rafae\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add swagger-ui-express
 
 PATH: 
-  C:\Program Files (x86)\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Program Files (x86)\cmder\vendor\conemu-maximus5;C:\Program Files (x86)\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PowerShell\7\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\rafae\AppData\Local\Microsoft\WindowsApps;C:\Users\rafae\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rafae\AppData\Local\GitHubDesktop\bin;C:\Users\rafae\AppData\Roaming\npm;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\cmder\vendor\bin;C:\Program Files (x86)\cmder
+  C:\Program Files (x86)\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Program Files (x86)\cmder\vendor\conemu-maximus5;C:\Program Files (x86)\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\rafae\AppData\Local\Microsoft\WindowsApps;C:\Users\rafae\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rafae\AppData\Local\GitHubDesktop\bin;C:\Users\rafae\AppData\Roaming\npm;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\cmder\vendor\bin;C:\Program Files (x86)\cmder
 
 Yarn version: 
   1.22.15
@@ -25,7 +25,7 @@ npm manifest:
     "scripts": {
       "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
-      "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
+      "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles --forceExit",
       "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
     },
     "dependencies": {

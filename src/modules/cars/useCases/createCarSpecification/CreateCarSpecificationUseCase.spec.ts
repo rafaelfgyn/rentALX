@@ -3,7 +3,6 @@ import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 import { AppError } from '../../../../shared/errors/AppError'
 import { SpecificationsRepositoryInMemory } from "../../../../modules/cars/repositories/in-memory/SpecificationsRepositoryInMemory";
 
-
 let createCarSpecificationUseCase: CreateCarSpecificationUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory
 let specificationsRepositoryInMemory: SpecificationsRepositoryInMemory
